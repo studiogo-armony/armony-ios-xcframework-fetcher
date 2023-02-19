@@ -9,7 +9,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "XCFrameworksFetcher",
-            targets: ["XCFrameworksFetcher"]),
+            targets: ["XCFrameworksFetcher", "Alamofire"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -24,5 +24,9 @@ let package = Package(
         .testTarget(
             name: "XCFrameworksFetcherTests",
             dependencies: ["XCFrameworksFetcher"]),
+        // Alamofire-5.6.4
+        .binaryTarget(name: "Alamofire",
+                      url: "https://github.com/studiogo-armony/armony-ios-third-party-frameworks/releases/download/1.0.0/Alamofire.xcframework.zip",
+                      checksum: "c5f8b911d7482d074b2a0c8eb2c249ebcbcd95ffd7ca62e945223d7b851f016d")
     ]
 )
